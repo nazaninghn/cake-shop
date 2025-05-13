@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}شیرینی زرینه{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" />
+    <link rel="icon" href="{% static 'core/images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="{% static 'core/images/logo.png' %}" alt="لوگوی زرینه" class="logo">
+            <nav class="navbar">
+                <a href="/">خانه</a>
+                <a href="/about/">درباره ما</a>
+                <a href="/products/">محصولات</a>
+                <a href="/contact/">تماس با ما</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>📞 ۰۸۱-۳۸۲۲۴۹۵۹ | 📍 همدان، خیابان سی‌متری فرهنگ</p>
+        <a href="https://www.google.com/maps?q=34.798512,48.514939" target="_blank">مشاهده در Google Maps</a>
+    </footer>
+</body>
+</html>
+

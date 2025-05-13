@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>شیرینی زرینه شعبه سوم</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #b89b7a; /* Bronze/Copper */
+            --secondary-color: #c5d1d7; /* Light Blue-Gray - from shahrzadshokouhivand.com */
+            --text-color: #333333; /* Dark Gray */
+            --light-text: #666666; /* Medium Gray */
+            --background-color: #f5f2e9; /* Cream/Beige - from shahrzadshokouhivand.com */
+            --header-color: #c5d1d7; /* Light Blue-Gray - from shahrzadshokouhivand.com */
+            --footer-color: #c5d1d7; /* Light Blue-Gray - from shahrzadshokouhivand.com */
+            --accent-color: #b89b7a; /* Bronze/Copper */
+            --light-bg: #f0e9e0; /* Very light cream */
+            --title-color: #5e4534; /* Rich brown for title */
+            --menu-color: #f9f6f0; /* Light cream for menu */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: var(--header-color);
+            padding: 30px 0; /* Increased padding */
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            max-width: 280px; /* Increased from 220px to 280px */
+            margin: 0 auto;
+            filter: brightness(0) invert(0.2); /* Adjust logo color to match theme */
+        }
+
+        .title-section {
+            padding: 70px 0;
+            text-align: center;
+            background-color: var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-container {
+            position: relative;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Avicenna Mausoleum Animation */
+        .avicenna-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.07; /* More faded/transparent */
+            pointer-events: none;
+        }
+
+        .avicenna-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px; /* Increased from 180px to 250px */
+            height: auto;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(-50%, -50%) translateY(0px);
+            }
+            50% {
+                transform: translate(-50%, -50%) translateY(-10px);
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(0px);
+            }
+        }
+
+        /* Persian Style Title */
+        .persian-title-wrapper {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            z-index: 1;
+        }
+
+        .main-title {
+            font-family: 'Amiri', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--title-color);
+            position: relative;
+            display: inline-block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            z-index: 1;
+            padding: 0 15px;
+            margin: 0;
+        }
+
+        .title-ornament {
+            display: block;
+            width: 150px;
+            height: 30px;
+            margin: 15px auto;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 100'%3E%3Cpath fill='none' stroke='%235e4534' stroke-width='2' d='M0,50 C200,20 400,80 800,50'/%3E%3Ccircle cx='400' cy='50' r='10' fill='%235e4534'/%3E%3Ccircle cx='200' cy='35' r='5' fill='%235e4534'/%3E%3Ccircle cx='600' cy='65' r='5' fill='%235e4534'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .subtitle {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-color);
+            padding: 0 10px;
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .subtitle::before,
+        .subtitle::after {
+            content: '•';
+            color: var(--title-color);
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Menu Navigation - Similar to shahrzadshokouhivand.com */
+        .menu-nav {
+            background-color: var(--menu-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            margin: 0 15px;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .menu-link:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .menu-link:hover::after {
+            width: 100%;
+        }
+
+        /* Improved About Section - Removed circular elements */
+        .about-section {
+            padding: 80px 0;
+            background-color: var(--background-color);
+            position: relative;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .about-text-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .about-text {
+            width: 100%;
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--text-color);
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+            background-color: #fff;
+            padding: 30px;
+            border-right: 3px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-title {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            margin-left: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-text {
+            font-size: 1rem;
+            font-weight: 400;
+            word-break: break-word;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 15px;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .social-link:hover {
+            color: white;
+            background-color: var(--primary-color);
+        }
+
+        .social-icon {
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 280px;
+            height: 400px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background-color: var(--footer-color);
+            padding: 25px 0;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        /* Responsive styles - Improved for all devices */
+        @media (max-width: 992px) {
+            .logo {
+                max-width: 240px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-text {
+                font-size: 1rem;
+            }
+            
+            .avicenna-image {
+                width: 200px;
+            }
+            
+            .about-text-container {
+                padding: 25px;
+            }
+            
+            .menu-item {
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 220px;
+            }
+            
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .title-section,
+            .about-section,
+            .contact-section {
+                padding: 50px 0;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+            
+            .avicenna-image {
+                width: 180px;
+            }
+            
+            .about-text-container {
+                padding: 20px;
+            }
+            
+            /* Mobile Menu */
+            .menu-toggle {
+                display: block;
+                margin: 0 auto 10px;
+            }
+            
+            .menu-list {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+            
+            .menu-list.active {
+                display: flex;
+            }
+            
+            .menu-item {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .logo {
+                max-width: 200px;
+            }
+            
+            .main-title {
+                font-size: 1.7rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .subtitle::before,
+            .subtitle::after {
+                margin: 0 5px;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .about-text {
+                font-size: 0.95rem;
+                line-height: 1.9;
+            }
+            
+            .contact-title {
+                font-size: 1.3rem;
+            }
+            
+            .contact-text,
+            .social-link {
+                font-size: 0.95rem;
+            }
+            
+            .social-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .title-section,
+            .about-section,
+            .contact-section {
+                padding: 40px 0;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .avicenna-image {
+                width: 150px;
+            }
+            
+            .title-ornament {
+                width: 100px;
+                height: 20px;
+                margin: 10px auto;
+            }
+            
+            .about-text-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_6391.PNG-sgIMSHdLmYFOXE2phiFjPTPFikG9dj.png" alt="شیرینی زرینه" class="logo">
+        </div>
+    </header>
+
+    <nav class="menu-nav">
+        <div class="container">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="menu-list" id="menuList">
+                <li class="menu-item"><a href="#" class="menu-link">صفحه اصلی</a></li>
+                <li class="menu-item"><a href="#about" class="menu-link">درباره ما</a></li>
+                <li class="menu-item"><a href="#contact" class="menu-link">تماس با ما</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">محصولات</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">سفارش آنلاین</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="title-section">
+        <div class="container">
+            <div class="title-container">
+                <div class="avicenna-container">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hamedan-buali-sina-tomb-vector.jpg-MLT55F74l637RKOhd8nL6gXj5peZM5.jpeg" alt="آرامگاه بوعلی سینا" class="avicenna-image">
+                </div>
+                <div class="persian-title-wrapper">
+                    <h1 class="main-title">شیرینی زرینه شعبه سوم</h1>
+                    <span class="title-ornament"></span>
+                </div>
+                <p class="subtitle">طعمی به قدمت خاطره، با نگاهی به آینده</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">درباره ما</h2>
+                <div class="about-text-container">
+                    <div class="about-text">
+                        <p>داستان شیرینی زرینه از دهه ۱۳۲۰ آغاز شد؛ زمانی که پدربزرگ عزیزمان، زنده‌یاد محمدحسن زرینه، که همگان او را با نام «مدحسن» می‌شناختند، با دستانی پُرکار و قلبی سرشار از عشق، نان کماج را پخت — نانی که خیلی زود به نماد سوغات همدان تبدیل شد.</p>
+                        
+                        <p>مدحسن با صداقت، خلاقیت و مهربانی، شیرینی‌هایی را آفرید که طعمشان هنوز در ذهن و دل مردم مانده است. پس از او، فرزندانش با همان عشق و تعهد، مسیرش را ادامه دادند و با حفظ اصالت و کیفیت، برند زرینه را به یکی از نام‌های ماندگار همدان تبدیل کردند.</p>
+                        
+                        <p>ما، نسل سوم خانواده زرینه، با افتخار راه پدربزرگ عزیزمان را ادامه می‌دهیم. تلاش ما این است که با پایبندی به ارزش‌های دیرینه خانواده‌مان — یعنی کیفیت، صداقت و عشق به کار — و همراه کردن آن‌ها با خلاقیت و نوآوری، بهترین باشیم و سلیقه نسل امروز را نیز پاسخ دهیم.</p>
+                        
+                        <p>شعبه سوم زرینه با همین نگاه شکل گرفته است؛ ترکیبی از سنت دیرینه و نوآوری‌های روز. در این شعبه، در کنار حفظ طعم‌های اصیل و به‌یادماندنی، با شیرینی‌ها و کیک‌های جدید مانند کیک شکلاتی و زبان مخصوص زرینه، تلاش کرده‌ایم تجربه‌ای متفاوت و لذت‌بخش برای شما فراهم کنیم.</p>
+                        
+                        <p>و این تنها آغاز راه است؛ ما همیشه در تلاشیم تا با محصولات تازه و ایده‌های نو، طعم‌های جدیدی برای شما خلق کنیم و همراه همیشگی لحظه‌های شیرین‌تان باشیم.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">تماس با ما</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-title">اطلاعات تماس</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span class="contact-text">همدان، خیابان سی متری فرهنگ، نرسیده به بلوار فاطمیه</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span class="contact-text">۰۸۱-۳۸۲۲۴۹۵۹</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ghanadi_zarineh_3/" target="_blank" class="social-link">
+                            <span class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </span>
+                            ما را در اینستاگرام دنبال کنید
+                        </a>
+                        <br>
+                        <a href="https://wa.me/+989123456789" target="_blank" class="social-link">
+                            <span class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                </svg>
+                            </span>
+                            ارتباط از طریق واتس‌اپ
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.5468557458473!2d48.51456491524792!3d34.80080088040857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ff1c5f4e1c8b2a9%3A0x3ad5d576c4b7c4b8!2sFarhang%20St%2C%20Hamedan%2C%20Iran!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">© ۱۴۰۴ شیرینی زرینه – تمامی حقوق محفوظ است.   nzghn</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuList = document.getElementById('menuList');
+            
+            if (menuToggle && menuList) {
+                menuToggle.addEventListener('click', function() {
+                    menuList.classList.toggle('active');
+                });
+            }
+            
+            // Close menu when clicking on a link
+            const menuLinks = document.querySelectorAll('.menu-link');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuList.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
